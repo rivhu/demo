@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Q&A</title>
+</head>
+<body>
+    <h1>Available Questions</h1>
+    <ul>
+        {% for q in questions %}
+            <li>
+                <a href="?id={{ q.id }}">{{ q.text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    {% if selected_question %}
+        <h2>Answer:</h2>
+        <p>{{ selected_question.answer }}</p>
+    {% else %}
+        <p>Select a question above to see the answer.</p>
+    {% endif %}
+</body>
+</html>
